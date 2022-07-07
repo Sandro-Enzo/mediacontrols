@@ -1,14 +1,22 @@
 'use strict';
 
+let mode;
+
+chrome.storage.sync.get('mode', (data) => {
+    mode = data.mode;
+});
+
+chrome.storage.onChanged.addListener((changes) => {
+    mode = changes.mode;
+});
+
 window.addEventListener(
     'visibilitychange',
     (e) => {
-        chrome.storage.sync.get('mode', (data) => {
-            const option = new Option(data.mode);
-            option.visibilityChange();
+        const option = new Option(mode);
+        option.visibilityChange();
 
-            console.log(option.constructor.name);
-        });
+        console.log(option.constructor.name);
 
         // Make sure Twitch and other websites don't know you left the tab so they can't automatically turn down video resolution
         e.stopPropagation();
@@ -33,14 +41,10 @@ class Option {
 }
 
 class Normal extends Option {
-    constructor() {}
-
     visibilityChange() {}
 }
 
 class LeagueRacing extends Option {
-    constructor() {}
-
     visibilityChange() {
         this.muteOnLeave();
     }
@@ -48,7 +52,7 @@ class LeagueRacing extends Option {
     // Fires every time the user enters or leaves the tab
     muteOnLeave = () => {
         // Get the mute button for the site the extension is currently on
-        const muteButton = getMuteButton();
+        const muteButton = this.getMuteButton();
 
         // Check if a mute button was found (if a site is not supported, muteButton will be null)
         if (muteButton) {
