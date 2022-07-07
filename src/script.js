@@ -47,17 +47,13 @@ class LeagueRacing extends Option {
 
     // Fires every time the user enters or leaves the tab
     muteOnLeave = () => {
-        chrome.storage.sync.get('mode', (data) => {
-            if (data.mode !== 'league racing') return;
+        // Get the mute button for the site the extension is currently on
+        const muteButton = getMuteButton();
 
-            // Get the mute button for the site the extension is currently on
-            const muteButton = getMuteButton();
-
-            // Check if a mute button was found (if a site is not supported, muteButton will be null)
-            if (muteButton) {
-                muteButton.click();
-            }
-        });
+        // Check if a mute button was found (if a site is not supported, muteButton will be null)
+        if (muteButton) {
+            muteButton.click();
+        }
     };
 
     // Gets the mute button on the current page
