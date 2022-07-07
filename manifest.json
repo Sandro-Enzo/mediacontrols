@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Media Controls",
+    "version": "0.1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "./src/script.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "./resources/mediacontrols/mediacontrols16.png",
+        "32": "./resources/mediacontrols/mediacontrols32.png",
+        "48": "./resources/mediacontrols/mediacontrols48.png",
+        "128": "./resources/mediacontrols/mediacontrols128.png"
+    },
+    "options_ui": {
+        "page": "./options.html",
+        "open_in_tab": false
+    },
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "service_worker": "./service_worker.js"
+    }
+}
