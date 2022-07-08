@@ -1,7 +1,7 @@
 'use strict';
 
 // The select element in the options window
-const selectEl = document.getElementById('mode');
+const selectEl = <HTMLSelectElement>document.getElementById('mode');
 
 // Initialize the select to the current selection
 chrome.storage.sync.get('mode', (data) => {
@@ -14,3 +14,4 @@ selectEl.onchange = () => {
         mode: selectEl.value,
     });
 };
+
