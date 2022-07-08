@@ -1,0 +1,1 @@
+(()=>{"use strict";var e=document.getElementById("mode");chrome.storage.sync.get("mode",(function(o){e.value=o.mode})),e.onchange=function(){chrome.storage.sync.set({mode:e.value})}})();
