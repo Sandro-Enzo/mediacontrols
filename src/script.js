@@ -105,3 +105,4 @@ class LeagueRacing extends Option {
         return output;
     };
 }
+
