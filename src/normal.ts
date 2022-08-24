@@ -1,4 +1,5 @@
-export default class Normal extends Option {
+import IMode from './mode';
+
+export default class Normal implements IMode {
     visibilityChange() {}
 }
-

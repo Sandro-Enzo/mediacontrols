@@ -14,4 +14,3 @@ selectEl.onchange = () => {
         mode: selectEl.value,
     });
 };
-

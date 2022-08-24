@@ -2,13 +2,14 @@
 
 const path = require('path');
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV == 'development';
 
 const config = {
     entry: {
         script: './src/script.ts',
         options: './src/options.ts',
     },
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
@@ -50,4 +51,3 @@ module.exports = () => {
     }
     return config;
 };
-

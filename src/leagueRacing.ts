@@ -1,4 +1,6 @@
-export default class LeagueRacing extends Option {
+import IMode from './mode';
+
+export default class LeagueRacing implements IMode {
     visibilityChange() {
         this.muteOnLeave();
     }
@@ -9,9 +11,7 @@ export default class LeagueRacing extends Option {
         const muteButton = this.getMuteButton();
 
         // Check if a mute button was found (if a site is not supported, muteButton will be null)
-        if (muteButton) {
-            muteButton.click();
-        }
+        muteButton?.click();
     };
 
     // Gets the mute button on the current page
@@ -67,4 +67,3 @@ export default class LeagueRacing extends Option {
         return output;
     };
 }
-

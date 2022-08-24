@@ -1,6 +1,6 @@
 'use strict';
 
-import Mode from './mode';
+import IMode, { getModeClass } from './mode';
 
 let mode: string;
 
@@ -9,22 +9,19 @@ chrome.storage.sync.get('mode', (data) => {
 });
 
 chrome.storage.onChanged.addListener((changes) => {
-    mode = <string>changes.mode;
+    mode = <string>changes.mode.newValue;
 });
 
 window.addEventListener(
     'visibilitychange',
-    (e) => {
-        const option = new Mode(mode);
-        option.visibilityChange();
-
-        console.log(option.constructor.name);
+    (event) => {
+        const option = getModeClass(mode);
+        option?.visibilityChange();
 
         // Make sure Twitch and other websites don't know you left the tab so they can't automatically turn down video resolution
-        e.stopPropagation();
+        event.stopPropagation();
     },
     {
         capture: true,
     }
 );
-
