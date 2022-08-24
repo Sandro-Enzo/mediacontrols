@@ -12,6 +12,9 @@
             ]
         }
     ],
+    "action": {
+        "default_popup": "./popup.html"
+    },
     "icons": {
         "16": "./resources/mediacontrols/mediacontrols16.png",
         "32": "./resources/mediacontrols/mediacontrols32.png",
