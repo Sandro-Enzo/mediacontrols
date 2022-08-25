@@ -1,5 +1,3 @@
-'use strict';
-
 // The select element in the options window
 const selectEl = <HTMLSelectElement>document.getElementById('mode');
 

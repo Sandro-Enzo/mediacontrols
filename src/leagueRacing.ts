@@ -1,3 +1,5 @@
+// The 'League Racing' option for the extension, which will toggle mute any tab that loses or gains focus
+
 import IMode from './mode';
 
 export default class LeagueRacing implements IMode {
