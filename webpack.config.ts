@@ -1,10 +1,12 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path');
+// const path = require('path');
+import path from 'path';
+import webpack from 'webpack';
 
 const isProduction = process.env.NODE_ENV == 'development';
 
-const config = {
+const config: webpack.Configuration = {
     entry: {
         script: './src/script.ts',
         options: './src/options.ts',
