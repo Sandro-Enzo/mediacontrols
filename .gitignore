@@ -1,3 +1,4 @@
 node_modules/
 dist/
 service_worker.js.map
+service_worker.js
