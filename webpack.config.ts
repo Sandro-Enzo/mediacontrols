@@ -8,13 +8,15 @@ const isProduction = process.env.NODE_ENV == 'development';
 
 const config: webpack.Configuration = {
     entry: {
-        script: './src/script.ts',
-        options: './src/options.ts',
+        script: './src/contentScripts/script.ts',
+        options: './src/options/options.ts',
+        '../service_worker': './src/serviceWorker/service_worker.ts',
     },
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
+        clean: true,
     },
     plugins: [
         // Add your plugins here

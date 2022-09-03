@@ -14,5 +14,9 @@
             "target": "ES5"
         }
     },
-    "files": ["src/script.ts", "src/options.ts"]
+    "files": [
+        "src/contentScripts/script.ts",
+        "src/options/options.ts",
+        "src/serviceWorker/service_worker.ts"
+    ]
 }
