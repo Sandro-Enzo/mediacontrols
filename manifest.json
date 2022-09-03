@@ -13,7 +13,7 @@
         }
     ],
     "action": {
-        "default_popup": "./popup.html"
+        "default_popup": "./public/popup.html"
     },
     "icons": {
         "16": "./resources/mediacontrols/mediacontrols16.png",
@@ -22,14 +22,13 @@
         "128": "./resources/mediacontrols/mediacontrols128.png"
     },
     "options_ui": {
-        "page": "./options.html",
+        "page": "./public/options.html",
         "open_in_tab": false
     },
     "permissions": [
         "storage"
     ],
     "background": {
-        "service_worker": "./service_worker.js",
-        "module": true
+        "service_worker": "./service_worker.js"
     }
 }
