@@ -17,8 +17,6 @@ chrome.runtime.onInstalled.addListener(() => {
 // });
 
 chrome.tabs.onHighlighted.addListener((highlightInfo) => {
-    console.dir(highlightInfo);
-
     chrome.tabs.query({ active: false }, (result) => {
         result.forEach((tab) => {
             chrome.tabs.update(tab.id, { muted: true });

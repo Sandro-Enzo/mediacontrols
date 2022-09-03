@@ -1,5 +1,4 @@
 // This script runs every time a new website is opened with the extension active
-import IMode, { getModeClass } from './mode';
 
 let mode: string;
 
@@ -17,9 +16,6 @@ chrome.storage.onChanged.addListener((changes) => {
 window.addEventListener(
     'visibilitychange',
     (event) => {
-        const option = getModeClass(mode);
-        option?.visibilityChange();
-
         // Make sure Twitch and other websites don't know you left the tab so they can't automatically turn down video resolution
         event.stopPropagation();
     },
