@@ -10,6 +10,7 @@ const config: webpack.Configuration = {
     entry: {
         script: './src/contentScripts/script.ts',
         options: './src/options/options.ts',
+        action: './src/action/action.ts',
         '../service_worker': './src/serviceWorker/service_worker.ts',
     },
     devtool: 'source-map',

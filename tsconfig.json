@@ -17,6 +17,7 @@
     "files": [
         "src/contentScripts/script.ts",
         "src/options/options.ts",
-        "src/serviceWorker/service_worker.ts"
+        "src/serviceWorker/service_worker.ts",
+        "src/action/action.ts"
     ]
 }
