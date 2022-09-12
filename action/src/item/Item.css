@@ -1,0 +1,14 @@
+.button.true {
+    background-color: var(--button-remove);
+}
+
+.button.false {
+    background-color: var(--button-add);
+}
+
+.button {
+    min-width: 1.5em;
+    min-height: 1.5em;
+    border: none;
+    border-radius: 50%;
+}
